@@ -98,7 +98,7 @@
   <!--        Powered By <a href="https://telegra.ph" target="_blank">Telegraph</a>-->
   <!--      </p>-->
   <p>
-    Powered By <a href="https://www.didachuxing.com" target="_blank">Dida Tester</a>
+    Powered By <a href="https://www.didachuxing.com" target="_blank">Dida QA</a>
   </p>
   <!--      <a href="https://github.com/ifyour/cf-image-hosting" target="_blank"-->
   <!--        >GitHub</a-->
@@ -168,6 +168,9 @@
 <!--                    <button class="btn btn-outline-secondary copy-btn" type="button" onclick="copyImageUrl()">Copy URL</button>-->
                       <button class="btn btn-outline-secondary copy-btn" type="button" onclick="copyImageUrl()">复制图片URL</button>
                   </div>
+                  <div class="input-group-append">
+                      <button class="btn btn-outline-secondary send-btn" type="button" onclick="sendImageUrl()">发送图片URL</button>
+                  </div>
                 </div>
                 <br />
                 <img src="${src}" class="img-fluid mb-3" alt="Uploaded Image">
@@ -197,6 +200,19 @@
     setTimeout(() => {
       // document.querySelector(".copy-btn").textContent = "Copy URL";
       document.querySelector(".copy-btn").textContent = "复制图片URL";
+    }, 1000);
+  };
+
+  const sendImageUrl = () => {
+    const imageUrl = document.getElementById("imageUrl");
+    // imageUrl.select();
+    const formData = new FormData();
+    formData.append("imageUrl", imageUrl.value);
+    fetch("/send", {method: "POST", body: formData})
+            .then((response) => response.json())
+    document.querySelector(".send-btn").textContent = "✨ 已发送";
+    setTimeout(() => {
+      document.querySelector(".send-btn").textContent = "发送图片URL";
     }, 1000);
   };
 </script>
