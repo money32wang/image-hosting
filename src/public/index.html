@@ -93,6 +93,12 @@
             accept="image/png, image/jpeg, image/jpg, image/gif"
     />
   </div>
+<!--  <div class="input-group">-->
+<!--    <label for="imageUrl"></label><input type="text" class="form-control" id="imageUrl" value="123456789">-->
+<!--    <div class="input-group-append">-->
+<!--      <button class="btn btn-outline-secondary send-btn" type="button" onclick="sendImageUrl()">发送图片URL</button>-->
+<!--    </div>-->
+<!--  </div>-->
   <div id="uploadStatus" style="margin-top: 20px"></div>
   <!--      <p>-->
   <!--        Powered By <a href="https://telegra.ph" target="_blank">Telegraph</a>-->
@@ -204,16 +210,41 @@
   };
 
   const sendImageUrl = () => {
-    const imageUrl = document.getElementById("imageUrl");
-    // imageUrl.select();
-    const formData = new FormData();
-    formData.append("imageUrl", imageUrl.value);
-    fetch("/send", {method: "POST", body: formData})
-            .then((response) => response.json())
-    document.querySelector(".send-btn").textContent = "✨ 已发送";
-    setTimeout(() => {
-      document.querySelector(".send-btn").textContent = "发送图片URL";
-    }, 1000);
+    const imageUrl = document.getElementById("imageUrl").value;
+    // 创建一个包含消息信息的对象
+    const messageData = {
+      msgtype: "markdown",
+      markdown: {
+        title: "测试",
+        text: `#### Dida1\n> 这是您上传的图片\n> ![screenshot](${imageUrl})\n>`
+      }
+    };
+    console.log(messageData)
+
+    fetch("/send", {
+      method: "POST",
+      body: JSON.stringify(messageData),
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+      },
+    })
+            .then(response => response.json())
+            .then(data => {
+              console.log('Image URL sent successfully:', data);
+              // 修改按钮文本
+              document.querySelector(".send-btn").textContent = "✨ 已发送";
+              setTimeout(() => {
+                document.querySelector(".send-btn").textContent = "发送图片URL";
+              }, 1000);
+            })
+            .catch(error => {
+              console.error('Failed to send image URL:', error);
+              // 在失败的情况下同样修改按钮文本
+              document.querySelector(".send-btn").textContent = "❌ 发送失败";
+              setTimeout(() => {
+                document.querySelector(".send-btn").textContent = "发送图片URL";
+              }, 1000);
+            });
   };
 </script>
 </body>
