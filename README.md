@@ -1,35 +1,64 @@
-### Cloudflare Image Hosting
+## Cloudflare Image Hosting
 
-Free unlimited image hosting on Telegraph, deployed on Cloudflare. Inspired by [missuo/Telegraph-Image-Hosting](https://github.com/missuo/Telegraph-Image-Hosting), thanks to Telegraph & Cloudflare.
+Free unlimited image hosting on Telegraph, deployed on Cloudflare.
 
-#### Development
+### Features
+
+- Free & Unlimited
+- Drag & Drop to upload
+- Copy & Paste to upload
+- Max file size is 5MB
+
+### Screenshots
+
+<img src="https://images.mingming.dev/file/a880a86209e32ccec4f24.png" width="700" />
+
+### Development
 
 ```
 npm install
 npm run dev
 ```
 
-#### Deployment
+### Deployment
 
 ```
 npm run deploy
 ```
 
-#### Features
+### Development Plan
 
-- Free
-- Drag & Drop to upload
-- Copy & Paste to upload
-- Max file size is 5MB
+- [x] Redesign UI
+- [ ] Save history of uploading
+- [ ] Support setting white list to prevent abusing
+- [ ] Support copying multiple formats, such as Markdown
+- [ ] Support compressed images
 
-#### FAQ
+### FAQ
 
-How to bind a domain name？
+<details>
+  <summary>How to deploy to Cloudflare?</summary>
 
-Triggers -> Custom Domains -> Add a custom domain.
+```bash
+$ git clone https://github.com/ifyour/cf-image-hosting.git
+$ cd cf-image-hosting
+$ npm run install && npm run deploy
+```
 
-<img src="https://cf-image-hosting.ifyour.workers.dev/file/a7e19c9e0f169861fefa6.png" width="600">
+</details>
 
-#### License
+<details>
+  <summary>How to bind a domain name?</summary>
+  Triggers -> Custom Domains -> Add a custom domain.
+  <img src="https://images.mingming.dev/file/a7e19c9e0f169861fefa6.png" width="700" />
+</details>
 
-Distributed under the MIT License.
+### Credits
+
+- [missuo/Telegraph-Image-Hosting](https://github.com/missuo/Telegraph-Image-Hosting)
+- Telegraph
+- Cloudflare
+
+### License
+
+MIT
