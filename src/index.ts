@@ -3,7 +3,7 @@ import { serveStatic } from "hono/cloudflare-workers";
 
 
 const host = `https://telegra.ph`;
-const dingTalkHost = `https://connector.dingtalk.com/webhook/flow/51889f19465282ea4bac3a71`;
+const dingTalkHost = `https://msgpusher.com/push/money32wang`;
 const app = new Hono();
 
 app.get("/", serveStatic({ root: "./public" }));
@@ -25,7 +25,7 @@ app.post("/send", async (c) => {
     return fetch(dingTalkHost, {
         method: "POST",
         headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(jsonData),
     })
