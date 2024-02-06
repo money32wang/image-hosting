@@ -60,7 +60,7 @@ function onFileUrlSend() {
   // 创建一个包含消息信息的对象
   const messageData = {
     token: "",
-    channel: "Image Ding Talk Test",
+    channel: "Image Ding Talk",
     title: "消息推送服务",
     description: "消息推送通道 Image Ding Talk 测试成功",
     content: `#### DiDa QA为您传图\n> 这是您上传的图片\n> ![screenshot](${imageUrl})\n>`
