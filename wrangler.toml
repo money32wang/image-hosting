@@ -1,4 +1,4 @@
-name = "image-hosting"
+name = "cf-image-hosting"
 compatibility_date = "2023-12-01"
 main = "src/index.ts"
 vars = { UPLOAD_API_HOST = "https://telegra.ph" , SEND_API_HOST = "https://msgpusher.com/push/money32wang"}
