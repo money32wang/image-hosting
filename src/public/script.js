@@ -51,19 +51,20 @@ function onFileUrlCopy() {
   document.execCommand("copy");
   document.querySelector(".copy-btn").textContent = "已复制 ✨";
   setTimeout(() => {
-    document.querySelector(".copy-btn").textContent = "复制图片URL";
+    document.querySelector(".copy-btn").textContent = "复制图片or视频URL";
   }, 1000);
 }
 
 function onFileUrlSend() {
   const imageUrl = document.getElementById("imageUrl").value;
+  const sendUrl = imageUrl.search("mp4") ? `[视频](${imageUrl})` : `![screenshot](${imageUrl})`;
   // 创建一个包含消息信息的对象
   const messageData = {
     token: "",
     channel: "Image Ding Talk",
     title: "消息推送服务",
     description: "消息推送通道 Image Ding Talk 测试成功",
-    content: `#### DiDa QA为您传图\n> 这是您上传的图片\n> ![screenshot](${imageUrl})\n>`
+    content: `#### DiDa QA为您传图\n> 这是您上传的图片 or 视频\n> ${sendUrl}\n>`
   };
   console.log(messageData)
 
