@@ -130,10 +130,10 @@ function handleUpload(file) {
         <div class="input-group">
           <input type="text" class="form-control" id="imageUrl" value="${src}">
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary copy-btn" type="button">复制图片URL</button>
+            <button class="btn btn-outline-secondary copy-btn" type="button">复制图片or视频URL</button>
           </div>
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary send-btn" type="button">发送图片URL</button>
+            <button class="btn btn-outline-secondary send-btn" type="button">发送图片or视频URL</button>
           </div>
         </div>
         <img style="margin-top: 10px" src="${src}" class="img-fluid mb-3" alt="Uploaded Image">
