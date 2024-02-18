@@ -58,8 +58,6 @@ function onFileUrlCopy() {
 function onFileUrlSend() {
   const imageUrl = document.getElementById("imageUrl").value;
   const sendUrl = imageUrl.search("mp4") !== -1 ? `[视频](${imageUrl})` : `![screenshot](${imageUrl})`;
-  console.log(imageUrl.search("mp4"))
-  console.log(sendUrl);
   // 创建一个包含消息信息的对象
   const messageData = {
     token: "",
