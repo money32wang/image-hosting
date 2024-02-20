@@ -64,7 +64,7 @@ function onFileUrlSend() {
     channel: "Image Ding Talk",
     title: "消息推送服务",
     description: "消息推送通道 Image Ding Talk 测试成功",
-    content: `#### DiDa QA为您传图\n> 这是您上传的图片 or 视频\n> ${sendUrl}\n>`
+    content: `#### DiDa QA为您服务\n> 这是您上传的图片 or 视频\n> ${sendUrl}\n>`
   };
   console.log(messageData)
 
