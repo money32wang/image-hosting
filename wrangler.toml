@@ -5,6 +5,6 @@ vars = { UPLOAD_API_HOST = "https://telegra.ph" , SEND_API_HOST = "https://msgpu
 
 [env.dev.vars]
 API_HOST = "https://image.202303288888888.xyz/"
-
+#API_HOST = "https://imageapi.hi-ohmyideatalk.xyz/"
 [site]
 bucket = "./src"
