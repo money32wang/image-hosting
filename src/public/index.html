@@ -164,7 +164,8 @@
     fetch("/upload", {method: "POST", body: formData})
             .then((response) => response.json())
             .then((data) => {
-              const src = window.location.origin + data[0].src;
+              // const src = window.location.origin + data[0].src;
+              const src = data.allPath;
               uploadStatus.innerHTML = `
 <!--                <div class="alert alert-success">Upload successful! 🥳</div>-->
                 <div class="alert alert-success">上传成功! 🥳</div>

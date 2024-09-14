@@ -2,7 +2,8 @@ import { Hono } from "hono";
 import { serveStatic } from "hono/cloudflare-workers";
 
 
-const host = `https://telegra.ph`;
+// const host = `https://telegra.ph`;
+const host = `https://cmstool-simu.didapinche.com`
 const dingTalkHost = `https://msgpusher.com/push/money32wang`;
 const app = new Hono();
 
@@ -13,7 +14,11 @@ app.post("/upload", async (c) => {
     const formData = new FormData();
     // Telegraph ignores filenames, so we can use any filename we want!
     formData.append("file", body.file as Blob, "test.png");
-    return fetch(`${host}/upload`, {
+    // return fetch(`${host}/upload`, {
+    //     method: "POST",
+    //     body: formData,
+    // });
+    return fetch(`${host}/cms/tool/upload/ueditor`, {
         method: "POST",
         body: formData,
     });
